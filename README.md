@@ -1,5 +1,3 @@
-# Simple lab with JavaEE/Tomcat environment
-
 Requirements
 
 - jdk-8u45-linux-x64.tar.gz or other jdk version unpacked in tomcat/installers folder
