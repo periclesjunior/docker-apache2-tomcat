@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  webserver:
+    build: ./apache2
+    image: local/apache2:0.1
+    container_name: apache2
+    networks:
+      - mynet
+    ports:
+      - "80:80"
+      - "443:443"
+  app:
+    build: ./tomcat
+    environment:
+      - HTTP_PORT=7070
+      - AJP_PORT=7009
+      - SHUTDOWN_PORT=7005
+    image: local/tomcat:0.1
+    container_name: tomcat8
+    networks:
+      - mynet
+    depends_on:
+      - webserver
+networks:
+  mynet:
+    driver: bridge
