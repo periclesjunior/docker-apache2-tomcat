@@ -1,4 +1,4 @@
-version: '3'
+version: '3.5'
 
 services:
   webserver:
@@ -24,4 +24,5 @@ services:
       - webserver
 networks:
   mynet:
+    name: net
     driver: bridge
